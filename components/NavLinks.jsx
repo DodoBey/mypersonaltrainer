@@ -4,6 +4,7 @@ const links = [
   { href: '/newworkoutplan', label: 'New Workout Plan' },
   { href: '/workouts', label: 'Workouts' },
   { href: '/profile', label: 'Profile' },
+  { href: '/askme', label: 'Ask Me!' },
 ];
 
 const NavLinks = () => {

@@ -4,14 +4,14 @@ import { MdLightMode, MdDarkMode } from 'react-icons/md';
 
 const themes = {
   emerald: 'emerald',
-  forest: 'forest',
+  dim: 'dim',
 };
 
 const ThemeToggle = () => {
   const [theme, setTheme] = useState(themes.emerald);
 
   const themeToggleHandler = () => {
-    const newTheme = theme === themes.emerald ? themes.forest : themes.emerald;
+    const newTheme = theme === themes.emerald ? themes.dim : themes.emerald;
     document.documentElement.setAttribute('data-theme', newTheme);
     setTheme(newTheme);
   };
