@@ -1,8 +1,9 @@
 ### My Personal Trainer
 
-**This is a FullStack Next.js application to create workout plans for the user without a hassle by the help of OpenAI API.
+\*\*This is a FullStack Next.js application to create workout plans for the user without a hassle by the help of OpenAI API.
 
 ### Stack
+
 - Next.js
 - Clerk
 - Tailwind & DaisyUi
@@ -13,17 +14,19 @@
 - React Hot Toaster
 
 ### Progress
+
 - [x] Boilerplate
 - [x] Required Dependencies Installed
 - [x] Homepage
 - [x] Clerk Integration
-- [ ] SideBar (in progres...)
-- [ ] Profile Page
-- [ ] Workout Page
-- [ ] Generate Workout Page
-- [ ] OpenAI Integration
+- [x] SideBar (in progres...)
+- [x] Profile Page
+- [x] Workout Page
+- [x] Generate Workout Page
+- [x] OpenAI Integration
+- [x] PDF Generator Integration
+- [ ] DB integration and saving the workouts
 - [ ] UX Implementations (such as toast, loader, error etc.)
-
 
 ### Getting Started
 
@@ -53,4 +56,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
