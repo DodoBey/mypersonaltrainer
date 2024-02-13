@@ -1,24 +1,35 @@
 'use client';
 
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation } from '@tanstack/react-query';
 import { ageList, numberOfDays, workoutType } from '@/app/constants';
 import { useState } from 'react';
-import NewGeneratedPlan from './NewGeneratedPlan';
-import { generateNewWorkout } from '@/utils/action';
+import WorkoutInfo from './WorkoutInfo';
+import {
+  generateNewWorkout,
+  getUserTokenById,
+  subtractToken,
+} from '@/utils/action';
 import toast from 'react-hot-toast';
+import { useAuth } from '@clerk/nextjs';
 
 const NewWorkout = () => {
   const [haveInjury, setHaveInjury] = useState(false);
-
+  const { userId } = useAuth();
   const {
     mutate,
     isPending,
     data: newWorkout,
   } = useMutation({
     mutationFn: async (userInformation) => {
+      const currentTokens = await getUserTokenById(userId);
+      if (currentTokens < 2000) {
+        toast.error('Insufficient Token Balance');
+        return;
+      }
       const newWorkout = await generateNewWorkout(userInformation);
       if (newWorkout) {
-        return newWorkout;
+        await subtractToken(userId, newWorkout.tokens);
+        return newWorkout.workout;
       }
       toast.error('Not able to create a workout with the given information');
       return null;
@@ -55,11 +66,12 @@ const NewWorkout = () => {
             <select
               className='select select-bordered'
               name='age'
+              defaultValue={''}
               required
             >
               <option
                 disabled
-                selected
+                value=''
               >
                 Pick one
               </option>
@@ -80,11 +92,12 @@ const NewWorkout = () => {
             <select
               className='select select-bordered'
               name='type'
+              defaultValue={''}
               required
             >
               <option
                 disabled
-                selected
+                value=''
               >
                 Pick one
               </option>
@@ -107,11 +120,12 @@ const NewWorkout = () => {
             <select
               className='select select-bordered'
               name='days'
+              defaultValue={''}
               required
             >
               <option
                 disabled
-                selected
+                value=''
               >
                 Pick one
               </option>
@@ -163,7 +177,7 @@ const NewWorkout = () => {
         </div>
       </form>
       <div className='mt-8'>
-        {newWorkout ? <NewGeneratedPlan newWorkout={newWorkout} /> : null}
+        {newWorkout ? <WorkoutInfo newWorkout={newWorkout} /> : null}
       </div>
     </>
   );

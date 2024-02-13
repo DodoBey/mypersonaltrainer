@@ -4,12 +4,12 @@ import BgImage from '../../../public/bg.png';
 export default function Page() {
   return (
     <div
-      className='hero min-h-screen flex justify-center items-center'
+      className='hero min-h-screen flex justify-center'
       style={{
         backgroundImage: `url(${BgImage.src})`,
       }}
     >
-      <SignUp />;
+      <SignUp afterSignUpUrl='/sign-in' />;
     </div>
   );
 }

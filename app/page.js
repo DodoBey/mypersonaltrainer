@@ -1,7 +1,14 @@
 import BgImage from '../public/bg.png';
 import Link from 'next/link';
+import { auth } from '@clerk/nextjs';
+import { redirect } from 'next/navigation';
 
 const Home = () => {
+  const { userId } = auth();
+
+  if (userId) {
+    redirect('/workouts');
+  }
   return (
     <div
       className='hero min-h-screen'
