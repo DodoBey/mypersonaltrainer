@@ -9,13 +9,14 @@ const AskMe = () => {
   const [question, setQuestion] = useState('');
   const [chatResponse, setChatResponse] = useState([]);
 
-  const { mutate } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: (query) => getTheAnswer([...chatResponse, query]),
     onSuccess: (data) => {
       if (!data) {
         toast.error('Something Went Wrong');
         return;
       }
+      setQuestion('');
       setChatResponse((prevState) => [...prevState, data]);
     },
   });
@@ -29,7 +30,20 @@ const AskMe = () => {
   return (
     <div className='min-h-[calc(100vh-6rem)] grid grid-rows-[1fr,auto]'>
       <div>
-        <h2 className='text-5xl'>Messages</h2>
+        {chatResponse.map(({ role, content }, index) => {
+          const messageImg = role === 'user' ? '👤' : '🤖';
+          const messageBg = role === 'user' ? 'bg-base-200' : 'bg-base-100';
+          return (
+            <div
+              key={index}
+              className={`${messageBg} flex py-6 -mx-8 px-8 text-xl leading-loose border-b border-base-300`}
+            >
+              <span className='mr-4'>{messageImg}</span>
+              <p className='max-w-3xl'>{content}</p>
+            </div>
+          );
+        })}
+        {isPending ? <span className='loading'></span> : null}
       </div>
       <form
         onSubmit={handleSubmit}
@@ -47,8 +61,9 @@ const AskMe = () => {
           <button
             className='btn btn-primary join-item'
             type='submit'
+            disabled={isPending}
           >
-            ASK ME!
+            {isPending ? 'Workin On It' : 'ASK ME!'}
           </button>
         </div>
       </form>
