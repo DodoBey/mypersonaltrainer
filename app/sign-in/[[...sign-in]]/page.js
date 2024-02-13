@@ -11,7 +11,7 @@ export default function Page() {
     >
       <div className='hero-overlay bg-opacity-90'></div>
       <div className='hero-content flex justify-center items-center p-0'>
-        <SignIn />
+        <SignIn afterSignInUrl='/workouts' />
       </div>
     </div>
   );

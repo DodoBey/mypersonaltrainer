@@ -25,8 +25,10 @@
 - [x] Generate Workout Page
 - [x] OpenAI Integration
 - [x] PDF Generator Integration
-- [ ] DB integration and saving the workouts
-- [ ] UX Implementations (such as toast, loader, error etc.)
+- [x] DB integration and saving the workouts
+- [x] UX Implementations (such as toast, loader, error etc.)
+- [ ] Stripe payment will be integrated for `Buy Token` functionality
+- [ ] And will be adding/upgrading the feature based on the feedbacks
 
 ### Getting Started
 
