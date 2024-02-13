@@ -22,7 +22,7 @@ const NewWorkout = () => {
   } = useMutation({
     mutationFn: async (userInformation) => {
       const currentTokens = await getUserTokenById(userId);
-      if (currentTokens < 2000) {
+      if (currentTokens < 1000) {
         toast.error('Insufficient Token Balance');
         return;
       }
