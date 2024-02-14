@@ -24,7 +24,7 @@ const Home = () => {
             Your Personal Trainer companion. Powered by OpenAI, it creates the
             best workouts for you!
           </p>
-          <button className='btn glass text-primary'>
+          <button className='btn glass text-neutral-content'>
             <Link href='/sign-in'>Get Started</Link>
           </button>
         </div>
