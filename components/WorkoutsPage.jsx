@@ -13,12 +13,13 @@ const WorkoutsPage = () => {
     <>
       {isPending ? (
         <span className='loading loading-md'></span>
-      ) : data ? (
+      ) : data.length > 0 ? (
         <WorkoutsList data={data} />
       ) : (
         <div>
           <h2 className='font-bold text-lg'>
-            You don't have any workout yet. You should create one first.
+            You have not recorded any workouts yet. First, you need to create
+            and save one.
           </h2>
           <Link
             className='btn btn-primary mt-4'

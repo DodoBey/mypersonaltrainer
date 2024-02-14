@@ -8,10 +8,10 @@ const themes = {
 };
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState(themes.emerald);
+  const [theme, setTheme] = useState(themes.dim);
 
   const themeToggleHandler = () => {
-    const newTheme = theme === themes.emerald ? themes.dim : themes.emerald;
+    const newTheme = theme === themes.dim ? themes.emerald : themes.dim;
     document.documentElement.setAttribute('data-theme', newTheme);
     setTheme(newTheme);
   };
