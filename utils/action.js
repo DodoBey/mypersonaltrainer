@@ -12,7 +12,7 @@ export const getTheAnswer = async (userQuestion) => {
   try {
     const response = await openai.chat.completions.create({
       messages: [
-        { role: 'system', content: 'you are a helpfull assistand' },
+        { role: 'system', content: 'you are a helpfull assistant' },
         ...userQuestion,
       ],
       model: 'gpt-3.5-turbo',

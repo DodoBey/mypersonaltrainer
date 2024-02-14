@@ -15,7 +15,7 @@ const AskMe = () => {
   const { mutate, isPending } = useMutation({
     mutationFn: async (query) => {
       const currentTokens = await getUserTokenById(userId);
-      if (currentTokens < 100) {
+      if (currentTokens < 80) {
         toast.error('Insufficient Token Balance');
         return;
       }

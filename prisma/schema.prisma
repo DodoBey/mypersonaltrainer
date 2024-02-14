@@ -19,5 +19,5 @@ model Workout {
 
 model Token {
   userId String @id
-  tokens Int @default(1000)
+  tokens Int @default(2000)
 }

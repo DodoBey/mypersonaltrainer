@@ -31,19 +31,22 @@
 - [ ] And will be adding/upgrading the feature based on the feedback
 
 # To Test It Out
-I have deployed the app on Vercel and Render. Before I deploy the app, I put a limitation for each user since OpenAI charges me for each token usage. I give 1000 Tokens for every account, the maximum token usage for 7 days of workout creation is around ~850 tokens, average token usage on each chat request is around ~100. If the user has less than 1000 tokens, creating a workout won't work or if the user has less than 100 tokens, chat won't work too. I'll implement Stripe for extra token requests. 
+
+I have deployed the app on Vercel and Render. Before I deploy the app, I put a limitation for each user since OpenAI charges me for each token usage. I give 2000 Tokens for every account, the maximum token usage for a request of 7 days of workout creation is around ~850 tokens, average token usage on each chat request is around ~100. If the user has less than 750 tokens, creating a workout won't work or if the user has less than 80 tokens, chat won't work too. I'll implement Stripe for extra token requests.
 
 This is just an experiment for now, so please do not create 100 new users to use thousands of tokens🥲
 
 ### Vercel
-Due to a Serverless Function Maximum Execution Duration on Vercel, it returns 504 - Timeout when the user tries to create a new workout. The rest works fine. 
 
-*[Vercel Link](https://mypersonaltrainer.vercel.app/)*
+Due to a Serverless Function Maximum Execution Duration on Vercel, it returns 504 - Timeout when the user tries to create a new workout. The rest works fine.
+
+_[Vercel Link](https://mypersonaltrainer.vercel.app/)_
 
 ### Render
+
 In addition to Vercel, I deployed the app into Render too, it doesn't have limitations for the serverless execution but it's slow. Also since my instance is on a free tier, it will spin down with inactivity, which can delay requests by 50 seconds or more. And due to it speed, sometimes it works glitchy when the requests are so slow but generally all the functionalities are ready to test on Render.
 
-*[Render Link](https://mypersonaltrainer.onrender.com/)*
+_[Render Link](https://mypersonaltrainer.onrender.com/)_
 
 ### Getting Started
 
