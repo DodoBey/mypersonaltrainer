@@ -17,7 +17,7 @@ const WorkoutsPage = () => {
         <WorkoutsList data={data} />
       ) : (
         <div>
-          <h2 className='font-bold text-lg'>
+          <h2 className='font-bold text-lg mt-4'>
             You have not recorded any workouts yet. First, you need to create
             and save one.
           </h2>

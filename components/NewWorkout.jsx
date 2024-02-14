@@ -55,7 +55,7 @@ const NewWorkout = () => {
     <>
       <form
         onSubmit={handleSubmit}
-        className='max-w-2xl'
+        className='max-w-2xl mt-4'
       >
         <h2 className='mb-4 font-bold'>Get Your Unique Workout Plan!</h2>
         <div className=' w-full'>

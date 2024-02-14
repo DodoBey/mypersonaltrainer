@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 
 const links = [
@@ -15,6 +17,9 @@ const NavLinks = () => {
           <Link
             href={link.href}
             className='capitalize'
+            onClick={() => {
+              document.getElementById('my-drawer')?.click();
+            }}
           >
             {link.label}
           </Link>

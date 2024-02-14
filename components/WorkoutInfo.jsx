@@ -129,16 +129,18 @@ const WorkoutInfo = ({ newWorkout }) => {
 
   return (
     <div className='max-w-2xl'>
-      <h1 className='text-4xl font-bold mb-4'>{title}</h1>
+      <h1 className='text-xl sm:text-4xl font-bold mb-4 underline underline-offset-8'>
+        {title}
+      </h1>
       {detail &&
         detail.map((day) => (
           <div key={day.title}>
             <h3 className='text-2xl font-semibold my-2'>{day.title}</h3>
-            <ul className='card bg-base-300'>
+            <ul className='card bg-base-300 shadow-lg shadow-primary-content p-4 w-full sm:w-2/3 mb-4'>
               {day.workoutplan.map((plan) => (
                 <li
                   key={plan}
-                  className='list-disc ml-6 font-medium'
+                  className='list-disc ml-6 font-medium mb-1'
                 >
                   {plan}
                 </li>

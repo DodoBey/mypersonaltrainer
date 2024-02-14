@@ -14,7 +14,7 @@ const WorkoutDetail = async ({ params }) => {
     <div>
       <Link
         href='/workouts'
-        className='btn btn-accent mb-8 btn-md'
+        className='btn btn-accent mb-8 btn-md mt-4'
       >
         Back to Workouts
       </Link>
