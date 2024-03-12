@@ -2,6 +2,12 @@
 
 \*\*This is a FullStack Next.js application to create workout plans for the user without hassle with the help of OpenAI API.
 
+
+
+https://github.com/DodoBey/mypersonaltrainer/assets/77416196/543d3a33-5fc8-4835-93bd-9e2d11870f22
+
+
+
 ### Stack
 
 - Next.js
