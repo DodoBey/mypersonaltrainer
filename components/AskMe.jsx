@@ -42,8 +42,6 @@ const AskMe = () => {
     }
   }, [chatResponse]);
 
-  console.log(chatResponse);
-
   return (
     <div className='h-[calc(100vh-6rem)] grid grid-rows-[1fr,auto]'>
       <div

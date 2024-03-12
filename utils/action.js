@@ -30,7 +30,7 @@ export const getTheAnswer = async (userQuestion) => {
 
 export const generateNewWorkout = async ({ age, type, days, injury }) => {
   const injuryIsValid = injury ? `I have ${injury} injury` : '';
-  const openAiQuery = `Create a workout plan based on ${age}, ${type}, ${days} days/week, and consider ${injuryIsValid}, if applicable. Include reps and sets for each exercise. If ${days} > 2 and type is Full Body, vary daily focus. Return plan in JSON format: {"workout": {"title": "${days}, ${type} plan", "detail": [{"title":"day and workout type", "workoutplan": ['move: sets x reps']}]}}, or {"workout": null} if unable to create plan.`;
+  const openAiQuery = `Create a workout plan based on ${age}, ${type}, ${days} days/week, and consider ${injuryIsValid}, if applicable. Include reps and sets for each exercise. If ${days} > 2 and type is Full Body, vary daily focus. Return plan in JSON format: {"workout": {"title": "${days}, ${type} plan", "detail": [{"title":"day and workout type", "workoutplan": ['move - sets x reps']}]}}, or {"workout": null} if unable to create plan.`;
   try {
     const response = await openai.chat.completions.create({
       messages: [

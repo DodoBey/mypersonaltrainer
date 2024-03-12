@@ -13,7 +13,7 @@ const Profile = async () => {
         </h2>
         <div className='flex flex-row mt-2'>
           <span className='block my-auto font-medium'>
-            First 1000 tokens are from us! To continue using the app, you should
+            First 2000 tokens are from us! To continue using the app, you should
             get more tokens.
           </span>
           <div
